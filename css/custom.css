@@ -1,0 +1,352 @@
+:root {
+  /* Light mode variables */
+  --dyms-primary: #10B981;     /* Green */
+  --dyms-secondary: #3B82F6;   /* Blue */
+  --dyms-accent: #6B7280;      /* Gray */
+  --dyms-dark: #1F2937;        /* Dark Gray */
+  --dyms-light: #F9FAFB;       /* Light Gray */
+  --dyms-surface: #F8F9FA;     /* Light Surface */
+  --dyms-border: #E5E7EB;      /* Light Border */
+  --dyms-text: #374151;        /* Text Gray */
+  
+  /* Light mode code styling */
+  --dyms-code-bg: #2D3748;     /* Dark gray for code blocks in light mode */
+  --dyms-code-text: #E2E8F0;   /* Light text for dark code backgrounds */
+  --dyms-playground-bg: #2D3748; /* Dark playground background */
+  --dyms-terminal-bg: #1A202C; /* Darker terminal background */
+}
+
+/* Dark mode overrides */
+[data-md-color-scheme="slate"] {
+  --dyms-surface: #2D3748;     /* Darker surface for dark mode */
+  --dyms-border: #4A5568;      /* Darker border for dark mode */
+  --dyms-text: #E2E8F0;        /* Light text for dark mode */
+  --dyms-dark: #E2E8F0;        /* Light color for headings in dark mode */
+  --dyms-accent: #A0AEC0;      /* Lighter gray for dark mode */
+  
+  /* Dark mode code styling - keep code dark even in dark mode */
+  --dyms-code-bg: #1A202C;     /* Very dark for code blocks in dark mode */
+  --dyms-code-text: #E2E8F0;   /* Light text for code */
+  --dyms-playground-bg: #1A202C; /* Very dark playground */
+  --dyms-terminal-bg: #0D1117; /* Terminal black */
+}
+
+/* Grid and Layout */
+.md-grid { 
+  max-width: 1200px; 
+}
+
+/* Ensure proper content width */
+.md-main__inner {
+  max-width: 100%;
+}
+
+.md-content__inner {
+  max-width: 100%;
+}
+
+
+/* Hero Section - Minimal with subtle color */
+.hero { 
+  text-align: center; 
+  padding: 4rem 2rem; 
+  background: var(--dyms-surface);
+  border: 1px solid var(--dyms-border);
+  margin: 2rem 0;
+  color: var(--dyms-text);
+  border-radius: 8px;
+}
+
+.hero h1 { 
+  font-size: 3rem; 
+  margin-bottom: 1rem; 
+  font-weight: 600;
+  color: var(--dyms-dark);
+}
+
+.hero p { 
+  font-size: 1.2rem; 
+  color: var(--dyms-accent);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Code Styling - Proper dark backgrounds in both modes */
+.highlight {
+  border: 1px solid var(--dyms-border);
+  background: var(--dyms-code-bg) !important;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+/* Inline code styling */
+code {
+  background: var(--dyms-code-bg);
+  color: var(--dyms-code-text);
+  padding: 0.2em 0.4em;
+  font-family: 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
+  font-size: 0.85em;
+  border-radius: 3px;
+  border: 1px solid var(--dyms-border);
+}
+
+/* Code block styling */
+.highlight, pre {
+  background: var(--dyms-code-bg) !important;
+  padding: 1.2rem !important;
+  margin: 1rem 0 !important;
+  overflow-x: auto;
+  border-radius: 6px;
+  border: 1px solid var(--dyms-border);
+}
+
+pre code {
+  background: transparent !important;
+  padding: 0 !important;
+  display: block;
+  line-height: 1.5;
+  color: var(--dyms-code-text) !important;
+  border: none;
+}
+
+/* Custom DYMS syntax highlighting colors for flat design */
+.highlight .k { color: var(--dyms-primary); font-weight: 600; } /* Keywords */
+.highlight .kc { color: #8B5CF6; font-weight: 500; } /* Constants like true/false */
+.highlight .s, .highlight .s1, .highlight .s2 { color: var(--dyms-secondary); } /* Strings */
+.highlight .c1, .highlight .cm { color: var(--dyms-accent); font-style: italic; opacity: 0.8; } /* Comments */
+.highlight .nf, .highlight .nv { color: #059669; font-weight: 500; } /* Function names and variables */
+.highlight .nb { color: #D97706; font-weight: 500; } /* Built-ins */
+.highlight .m, .highlight .mi, .highlight .mf { color: #DC2626; font-weight: 500; } /* Numbers */
+.highlight .o { color: var(--dyms-accent); font-weight: 500; } /* Operators */
+.highlight .p { color: var(--dyms-accent); } /* Punctuation */
+
+/* Interactive Elements - Flat */
+.code-playground {
+  background: var(--dyms-playground-bg);
+  border: 1px solid var(--dyms-border);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  color: var(--dyms-code-text);
+}
+
+.code-playground::before {
+  content: 'Interactive';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: var(--dyms-primary);
+  color: white;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.code-playground .highlight {
+  margin: 0;
+  border-radius: 4px;
+}
+
+.code-playground h3 {
+  color: var(--dyms-primary);
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+/* Status Colors */
+.success {
+  color: #10B981 !important;
+}
+
+.success-bg {
+  background: rgba(16, 185, 129, 0.1) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+.error {
+  color: #EF4444 !important;
+}
+
+.error-bg {
+  background: rgba(239, 68, 68, 0.1) !important;
+  border-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+.good {
+  color: #10B981 !important;
+  font-weight: 500;
+}
+
+.avoid {
+  color: #EF4444 !important;
+  font-weight: 500;
+}
+
+/* Feature Cards */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature-card {
+  background: var(--dyms-surface);
+  border: 1px solid var(--dyms-border);
+  padding: 2rem;
+  position: relative;
+  border-radius: 8px;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--dyms-primary);
+}
+
+.feature-card h3 {
+  color: var(--dyms-dark);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.feature-card p {
+  color: var(--dyms-accent);
+  line-height: 1.6;
+}
+
+/* Navigation Enhancements */
+.md-nav__title {
+  font-weight: 600;
+}
+
+.md-nav__link--active {
+  color: var(--dyms-primary) !important;
+}
+
+/* Button Styling - Flat */
+.md-button {
+  font-weight: 500 !important;
+  text-transform: none !important;
+  border: 1px solid var(--dyms-border) !important;
+  background: var(--dyms-surface) !important;
+  color: var(--dyms-text) !important;
+}
+
+.md-button--primary {
+  background: var(--dyms-primary) !important;
+  border: 1px solid var(--dyms-primary) !important;
+  color: white !important;
+}
+
+.md-button:hover {
+  background: var(--dyms-light) !important;
+}
+
+.md-button--primary:hover {
+  opacity: 0.9 !important;
+}
+
+/* Terminal-style code blocks - Flat */
+.terminal {
+  background: var(--dyms-terminal-bg);
+  border: 1px solid var(--dyms-border);
+  padding: 1rem;
+  margin: 1.5rem 0;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--dyms-code-text);
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+.terminal::before {
+  content: '$ ';
+  color: var(--dyms-primary);
+  font-weight: 500;
+}
+
+/* Copy button improvements with SVG icon */
+.md-code__inner {
+  position: relative;
+}
+
+.md-clipboard {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.md-clipboard:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.md-clipboard svg {
+  width: 1rem;
+  height: 1rem;
+  fill: var(--dyms-code-text);
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.md-clipboard:hover svg {
+  opacity: 1;
+}
+
+/* Better copy button for dark backgrounds */
+[data-md-color-scheme="slate"] .md-clipboard {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .md-clipboard:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .code-playground {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .highlight, pre {
+    padding: 1rem !important;
+    font-size: 0.8em;
+  }
+  
+}

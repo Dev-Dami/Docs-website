@@ -1,0 +1,2 @@
+[pygments.lexers]
+dyms = dyms_lexer:DymsLexer

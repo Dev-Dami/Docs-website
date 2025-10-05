@@ -1,0 +1,157 @@
+site_name: DYMS
+site_url: https://dyms-lang.dev
+site_description: Dynamic Yet Minimal System - A modern programming language with hybrid execution
+site_author: Dev-Dami
+copyright: "2024, Dev-Dami. Built with ❤️ and DYMS"
+repo_url: https://github.com/Dev-Dami/DYMS-Lang
+repo_name: DYMS-Lang
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  logo: logo.svg
+  favicon: logo.svg
+  palette:
+    # Dark mode (default)
+    - scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    # Light mode  
+    - scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Dev-Dami/DYMS-Lang
+      name: GitHub Repository
+    - icon: fontawesome/solid/code
+      link: https://github.com/Dev-Dami/DYMS-Lang/releases
+      name: Download DYMS
+  version:
+    provider: mike
+    default: latest
+  generator: false
+
+extra_css:
+  - css/custom.css
+  - https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap
+  - https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap
+
+extra_javascript:
+  - javascripts/extra.js
+
+watch:
+  - docs
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      permalink_title: Anchor link to this section for reference
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      use_pygments: true
+      pygments_style: github
+      extend_pygments_lang:
+        - name: "dyms"
+          lang: "dyms"
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: Dev-Dami
+      repo: DYMS-Lang
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - Home: index.md
+  - Quick Start:
+    - "Get Started": quick_start.md
+    - "Interactive Tutorial": tutorial.md
+    - "Command Line": cli_usage.md
+  - Language Guide:
+    - "Overview": language_overview.md
+    - "Features": features.md
+    - "Standard Library": standard_library.md
+    - "Pretty Printing": pretty_printing.md
+  - Examples:
+    - "Demos": demos.md
+    - "Code Patterns": patterns.md
+  - Advanced:
+    - "Architecture": architecture.md
+    - "Project Structure": project_structure.md
+    - "Performance": performance.md
+  - Community:
+    - "Roadmap": roadmap.md
+    - "Contributing": contributing.md
+    - "Further Reading": further_reading.md
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      pygments_style: monokai
+      use_pygments: true
+      extend_pygments_lang:
+        - name: "dyms"
+          lang: "dyms"
+  - toc:
+      permalink: true

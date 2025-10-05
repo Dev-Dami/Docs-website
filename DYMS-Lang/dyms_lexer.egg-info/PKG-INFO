@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: dyms_lexer
+Version: 0.2.0
+Summary: Pygments lexer for DYMS programming language
+Author: Dev-Dami
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Plugins
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Text Processing :: Filters
+Requires-Dist: Pygments>=2.0
+Dynamic: author
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: summary
